@@ -39,7 +39,7 @@ if (cardThree == cardFour){
 	alert ("Sorry, try again");
 }
 */
-cards = ['queen', 'queen', 'king', 'king'];
+cards = ["queen", "queen", "king", "king"];
 cardsInPlay = [];
 
 /*var gameBoard = document.getElementById('game-board');*/
@@ -47,51 +47,59 @@ cardsInPlay = [];
 /*var createCards = function (){
 	'use strict';*/
 
-	var gameBoard = document.getElementById("game-board").innerHTML = "Game Board";
+var gameBoard = document.getElementById("game-board");/*.innerHTML = "Game Board";*/
 
-  for (var i = 0; i < cards.length; i++){
+for (var i = 0; i < cards.length; i++){
     createCards();
-  }
+}
 
 function createCards(){
   var card = document.createElement('div');
-  card.className = 'card';
+  card.className = "card";
   card.setAttribute('data-card', cards[i]);
   gameBoard.appendChild(card);
   card.addEventListner('click', isTwoCards);
 }
 
 function isTwoCards(){
-  if(this.getAttribute('data-card') == 'king'){
+  if(this.getAttribute('data-card') == "king"){
     this.innerHTML = "<div class = 'king'></div>";
-  }
+}
 
   else{
     this.innerHTML = "<div class = 'queen'></div>";
-  cardsInPlay.push(this.getAttribute('data-card'));
 }
+
+/*puts king or queen into cardsInPlay array*/
+  cardsInPlay.push(this.getAttribute('data-card'));
+
+/*checks position of cards - face up or down*/
   if (cardsInPlay.length === 2){
+
+/*reset cards if have a match*/
     isMatch(cardsInPlay);
     cardsInPlay = [];
   }
 }
 
+/*self explanitory - checks for equality*/
 function isMatch(x){
-  if (x[0] != x[1]){
+  if (x[0] !== x[1]){
     setWait(function(){alert("Wrong, Try Again!");
     x = document.getElementByClassName ('card');
-    x[0].innerHTML = '';
-    x[1].innerHTML = '';
-    x[2].innerHTML = '';
-    x[3].innerHTML = '';}, 500);
+    x[0].innerHTML = " ";
+    x[1].innerHTML = " ";
+    x[2].innerHTML = " ";
+    x[3].innerHTML = " ";}, 500);
 }
+
   else{
     setWait(function(){alert("Correct, Keep Going!");
     x = document.getElementByClassName ('card');
-    x[0].innerHTML = '';
-    x[1].innerHTML = '';
-    x[2].innerHTML = '';
-    x[3].innerHTML = '';}, 500);
+    x[0].innerHTML = " ";
+    x[1].innerHTML = " ";
+    x[2].innerHTML = " ";
+    x[3].innerHTML = " ";}, 500);
   }
 }
 

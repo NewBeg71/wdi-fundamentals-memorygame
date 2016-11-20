@@ -1,20 +1,45 @@
 .board{
 	display: inline-block;
-	height: 80%;
-	width: 50%;
+	height: 100%;
+	width: 100%;
+  border-color: black;
+  border-style: solid;
+  border-width: 5px;
+  background-color: green;
 }
 
 .card{
-	height: 200px;
-	width: 150px;
-	/*display: inline-block;*/
+	height: 250px;
+	width: 180px;
+	display: block;
 	background-color: rgb(255, 255, 0);
-	border-radius: 10px;
+	border-radius: 10%;
   border-style: solid;
   border-width: 1px;
   border-color: black;
   float: left;
   margin: 8%;
+  background-image: url('images/back.png');
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+}
+
+.king{
+  background-image: url('images/kingd.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 180px;
+  background-color: white;
+}
+
+.queen{
+  background-image: url('images/quuend.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 180px;
+  background-color: white;
 }
 
 h1{
@@ -25,12 +50,14 @@ h2{
 	color: #ffd700;
 }
 
-a: hover{
-	color: red;
+a:hover{
+	background-color: red;
 }
 
 body{
 	text-align: center;
+  margin: 0;
+  background-color: tan;
 }
 
 nav{
@@ -46,7 +73,7 @@ nav{
 }
 
 .clearfix:after{
-	visibility: hidden;
+	/*visibility: hidden;*/
 	display: block;
 	content: " ";
 	clear: both;
@@ -57,5 +84,6 @@ nav{
 footer{
 	background-color: #808080;
 	padding: 15px;
-
+  /*height: 30px;*/
+  font-size: 14px;
 }
