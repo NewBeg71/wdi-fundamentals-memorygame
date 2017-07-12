@@ -3,45 +3,66 @@ var cardTwo = "queen";
 var cardThree = "king";
 var cardFour = "king";
 
-if (cardOne == cardFour){
+//Up to line 43 this was code written - not following instructions just the logic of psuedocode
+
+if (cardOne === cardFour){
 	alert ("You found a match!");
-} else;{
+} else{
 	alert ("Sorry, try again");
 }
 
-if (cardOne == cardThree){
+if (cardOne === cardThree){
 	alert ("You found a match!");
-} else;{
+} else{
 	alert ("Sorry, try again");
 }
 
-if (cardOne == cardTwo){
+if (cardOne === cardTwo){
 	alert ("You found a match!");
-} else;{
+} else{
 	alert ("Sorry, try again");
 }
 
-if (cardTwo == cardThree){
+if (cardTwo === cardThree){
 	alert ("You found a match!");
-} else;{
+} else{
 	alert ("Sorry, try again");
 }
 
-if (cardTwo == cardFour){
+if (cardTwo === cardFour){
 	alert ("You found a match!");
-} else;{
+} else{
 	alert ("Sorry, try again");
 }
 
-if (cardThree == cardFour){
+if (cardThree === cardFour){
 	alert ("You found a match!");
-} else;{
+} else{
 	alert ("Sorry, try again");
 }
 */
 var cards = ['queen', 'queen', 'king', 'king'];
+var cardsInPlay = [];
 
-var createCards = function (){
+var cardOne = cards[0];
+cardsInPlay.push(cardOne);
+
+var cardTwo = cards [2];
+cardsInPlay.push(cardTwo);
+
+if (cardsInPlay.length === 2){
+	checkMatch();
+	cardsInPlay[];
+}
+
+var checkMatch = function(){if (cardsInPlay[0] === cardsInPlay[1])
+	{alert('You found a match!');}
+else
+	{alert('Sorry, try again!');}
+	}
+};
+
+/*var createCards = function (){
 	'use strict';
 	var newBoard = document.getElementById("game-board").innerHTML = "Game Board";
 	for (var i = 0; i < cards.length; i++){
@@ -53,7 +74,7 @@ var createCards = function (){
 	}
 };
 
-createCards();
+createCards();*/
 
 
 
