@@ -3,7 +3,7 @@ a{
 	padding: 10px;
 }
 
-.board{
+#game-board{
 	display: inline-block;
 	height: 80%;
 	width: 50%;

@@ -42,8 +42,9 @@ if (cardThree === cardFour){
 }
 */
 //var cards = ['queen', 'queen', 'king', 'king'];
-var cards = [];
-var cardsInPlay = [
+
+
+var cards = [
 	{rank: 'queen',
 	suit: 'hearts',
 	cardImage: 'images/queen-of-hearts.png'
@@ -62,27 +63,42 @@ cardImage: 'images/king-of-diamonds.png'
 },
 ];
 
-var checkMatch = function()
-	{if (cardsInPlay[0] === cardsInPlay[1])
-		{alert('You found a match!');}
-	}
-	else{
-		{alert('Sorry, try again!');}
+var cardsInPlay = [];
+
+var checkMatch = function(){
+	if (cardsInPlay.length === 2);
+	if (cardsInPlay[0] === cardsInPlay[1]) {
+			alert ("You found a match!");
+		} else {
+			alert ("Sorry, try again.");
 	}
 };
 
-var flipCard = function(cardId){
-	if (cardsInPlay.length === 2){
+var flipCard = function(){
+	var cardId = this.getAttribute('data-id');
+	cardsInPlay.push(cards[cardId].rank);
+	this.setAttribute('src', cards[cardId].cardImage);
+	if (cardsInPlay.length === 2)
 		checkMatch();
-		//cardsInPlay[];
-		console.log("User flipped " + cards[cardId].rank);
-		cardsInPlay.push(cards[cardId].rank);
-	}
+		//cardsInPlay[]; - MISTAKE DO NOT KNOW WHY I PACED HERE GO THROUGH INSTRUCTIONS ONCE WORKING
+		//console.log("User flipped " + cards[cardId].rank); NOT NEEDED ???
 };
 
-flipCard(0);
-flipCard(2);
+//Following two lines no longer needed - was just to show how functions are called using set arguments
+/*flipCard(0);
+flipCard(2);*/
 
+var createBoard = function(){
+	for (var i = 0; i < cards.length; i++) {
+		var cardElement = document.createElement('img');
+		cardElement.setAttribute('src', 'images/back.png');
+		cardElement.setAttribute ('data-id', i);
+		cardElement.addEventListener ('click', flipCard);
+		document.getElementById('game-board').appendChild(cardElement);
+	}
+}
+
+createBoard();
 
 //lines 53-57 where for learning purposes
 /*var cardOne = cards[0];
@@ -97,7 +113,7 @@ cardsInPlay.push(cardTwo);*/
 
 
 
-checkMatch();
+//checkMatch(); THIS WAS CAUSING ISSUES AS WE CALLED IT WITHINFLIPCARD FUNCTION-NO NEED TO CALL IT AGAIN
 
 /*var createCards = function (){
 	'use strict';
