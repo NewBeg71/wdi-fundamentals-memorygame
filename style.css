@@ -3,7 +3,7 @@ a{
 	padding: 10px;
 }
 
-#game-board{
+.board{
 	display: inline-block;
 	height: 80%;
 	width: 50%;
@@ -32,6 +32,10 @@ h2{
 
 a:hover{
 	color: red;
+}
+
+#reset:hover{
+	color:blue;
 }
 
 body{
