@@ -94,6 +94,7 @@ flipCard(2);*/
 var newSet = function(){
 	var originalState = document.getElementById('game-board').cloneNode();
 	document.getElementById('game-board').replaceWith(originalState);
+	createBoard();
 };
 
 var createBoard = function(){
